@@ -1,0 +1,179 @@
+:root {
+  --primary: #596D48;
+  --grey: #E5E7EB;
+  --light: #eee;
+  --dark: #333;
+  --shadow: #aaa;
+  --invalid: red;
+  --valid: skyblue;
+  --hover: #495C48;
+
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@font-face {
+  font-family: 'Norse-Bold';
+  src: 
+    url('./assets/fonts/Norse-Bold.woff2'), 
+    url('./assets/fonts/Norse-Bold.woff');
+}
+
+html {
+  font-size: 16px;
+  font-family: var(--system-ui);
+}
+
+body {
+  font-size: clamp(0.75rem, 0.5rem + 1vw, 1rem);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+}
+
+.banner-div {
+  position: relative;
+  flex: 1 1 25%;
+  background-image: url('./assets/img/halie-west-25xggax4bSA-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--light);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0 0 0 / 0.5);
+  padding: 1rem;
+  margin-top: 10rem;
+}
+
+.logo h1 {
+  font-family: 'Norse-Bold', 'sans-serif';
+  font-size: calc(4rem + 1vw);
+}
+
+.logo img {
+  width: calc(4rem + 1vw);
+  height: auto;
+}
+
+.banner-div .credit {
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.form-div {
+  flex: 1 1 75%;
+  background-color: var(--grey);
+}
+
+.form-div form div {
+  padding: 5rem 3rem;
+}
+
+.form-div form div:nth-child(2) {
+  background-color: white;
+  padding: 2rem 3rem;
+  box-shadow: 0 5px 5px 0 var(--shadow);
+}
+
+.form-div form div:first-child {
+  margin-top: 3rem;
+}
+
+.form-div form div:last-child {
+  padding: 2rem 3rem;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+  gap: 5rem;
+  margin: 1rem 0;
+}
+
+label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+label span {
+  opacity: 0;
+  font-size: 0.7rem;
+  color: red;
+}
+
+input {
+  width: calc(12rem + 5vw);
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  padding: 4px 5px;
+  outline: none;
+  transition: 0.2s all linear;
+}
+
+input:focus {
+  border: 1px solid dodgerblue;
+  box-shadow: 0 1px 5px 0 var(--shadow);
+}
+
+input:invalid:not(:placeholder-shown, :focus) {
+  border: 1px solid red;
+}
+
+input:valid:not(:placeholder-shown, :focus) {
+  border: 1px solid green;
+}
+
+input:invalid:not(:placeholder-shown, :focus) ~ span {
+  opacity: 1;
+}
+
+input:valid:not(:focus) {
+  background-color: rgba(0 200 0 / 0.1);
+}
+
+button {
+  padding: 0.5rem 2rem;
+  background-color: var(--primary);
+  color: var(--light);
+  font-weight: bold;
+  font-size: 1.25rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 0 var(--shadow);
+  margin-bottom: 2rem;
+  transition: all 0.2s linear;
+}
+
+button:hover {
+  background-color: var(--hover);
+  box-shadow: 0 2px 10px 0 var(--shadow);
+  cursor: pointer;
+}
+
+.form-div form div:last-child a {
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.form-div form div:last-child a:hover {
+  color: var(--hover);
+}
+
+.credit a {
+  color: var(--light);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
