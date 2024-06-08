@@ -42,29 +42,31 @@
             <fieldset>
               <label for="first_name">First Name
                 <input type="text" name="first_name" id="first_name" pattern="^[a-z,A-Z]+$" placeholder="" required>
-                <span>* Only Alphabets</span>
+                <span>* Only alphabets</span>
               </label>
               <label for="last_name">Last Name
                 <input type="text" name="last_name" id="last_name" pattern="^[a-z,A-Z]+$" placeholder="" required>
-                <span>* Only Alphabets</span>
+                <span>* Only alphabets</span>
               </label>
             </fieldset>
             <fieldset>
               <label for="email">Email
                 <input type="email" name="email" id="email" placeholder="" required>
-                <span>* Invalid Email</span>
+                <span>* Invalid email</span>
               </label>
               <label for="phone_number">Phone Number
                 <input type="tel" pattern="^[0-9]{11}$" name="phone_number" id="phone_number" placeholder="" required>
-                <span>* 11 Digit Phone Number</span>
+                <span>* 11 Digit phone number</span>
               </label>
             </fieldset>
             <fieldset>
               <label for="password">Password
-                <input type="password" name="password" id="password" placeholder="" required>
+                <input type="password" name="password" id="password" placeholder="" required oninput="handleChange()">
+                <span>* Passwords mismatch</span>
               </label>
               <label for="confirmation">Confirm Password
-                <input type="password" name="confirmation" id="confirmation" placeholder="" required>
+                <input type="password" name="confirmation" id="confirmation" placeholder="" required oninput="handleChange()">
+                <span>* Passwords mismatch</span>
               </label>
             </fieldset>
           </div>
@@ -75,5 +77,7 @@
         </form>
       </div>
     </div>
+
+    <script src="./index.js"></script>
   </body>
 </html>
